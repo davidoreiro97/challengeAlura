@@ -1,0 +1,252 @@
+@import url(/css/vars.css);
+@import url(/css/animations.css);
+
+@font-face {
+	font-family: "Inter";
+	src: url(/assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+* {
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	background-color: var(--color-fondo-claro);
+	margin: 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.mainContainer {
+	position: relative;
+	display: flex;
+	gap: 1vw;
+	align-items: stretch;
+	justify-content: center;
+	font-size: clamp(16px, 1.5vw, 20px);
+	font-family: "Inter";
+	padding: 0.5em;
+	transition: ease 0.1s;
+}
+
+.mainContainer__inputs {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: inherit;
+}
+.mainContainer__inputs__text {
+	position: relative;
+	outline: none;
+	resize: none;
+	width: clamp(10em, 40vw, 20em);
+	height: clamp(5em, 70vh, 20em);
+	font-size: 1.6em;
+	font-family: "Inter";
+	font-weight: 400;
+	color: var(--color-letra-azul);
+	border: 0px;
+	border-radius: 32px;
+	padding: 20px;
+	background-color: whitesmoke;
+	box-shadow: 7px 5px 1px rgba(0, 0, 0, 0.247);
+	/* Modificaciones del scrollbar */
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: linear-gradient(to bottom, #80c6f5, #8787e0);
+		border-radius: 32px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: #ece9e9;
+		border-radius: 32px;
+		margin-block: 1em;
+		border: 1px solid rgb(209, 209, 209);
+	}
+}
+
+.mainContainer__inputs__text::placeholder {
+	padding: 0px;
+	font-size: 1em;
+	font-family: "Inter";
+	font-weight: 400;
+	color: var(--color-letra-azul);
+}
+
+.mainContainer__footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 80%;
+}
+/*MENSAJE*/
+.mainContainer__inputs__warning {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	margin: 10px;
+}
+
+.mainContainer__inputs__warning span {
+	font-size: 1.2em;
+	text-align: center;
+	text-wrap: balance;
+}
+
+.mainContainer__inputs__buttonsContainer {
+	display: flex;
+	gap: 0.5em;
+	justify-content: center;
+	align-items: center;
+	margin-top: 0px;
+}
+
+.mainContainer__inputs__buttonsContainer__button:nth-child(1) {
+	background-color: var(--color-fondo-boton-oscuro);
+	color: white;
+}
+
+.mainContainer__inputs__buttonsContainer__button:nth-child(2) {
+	background-color: var(--color-fondo-boton-claro);
+	color: var(--color-fondo-boton-oscuro);
+}
+
+.mainContainer__inputs__buttonsContainer__button {
+	display: flex;
+	align-items: center;
+	padding: 1em;
+	font-size: 0.8em;
+	font-family: "Inter";
+	font-weight: 600;
+}
+
+.icon-lock {
+	height: 2em;
+	width: 2em;
+	padding: 1px;
+	margin-right: 4px;
+}
+
+.mainContainer__inputs__buttonsContainer__button:active,
+.copyButton:active {
+	filter: contrast(80%);
+}
+
+.mainContainer__resultsContainer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	width: clamp(200px, calc(40vw + 10vh), 600px);
+	border-radius: 32px;
+	padding: 20px;
+	background-color: whitesmoke;
+	box-shadow: 7px 5px 1px rgba(0, 0, 0, 0.247);
+	height: 93vh;
+}
+.mainContainer__resultsContainer__message {
+	text-align: center;
+	text-wrap: balance;
+}
+.containerRespuesta {
+	overflow-y: auto;
+	margin-bottom: 2.2em;
+	padding: 0px;
+	/* Modificaciones del scrollbar */
+	&::-webkit-scrollbar {
+		width: 10px;
+		margin-block: 1em;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: linear-gradient(to bottom, #80c6f5, #8787e0);
+		border-radius: 32px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: #ece9e9;
+		border-radius: 32px;
+		margin-block: 0.2em;
+		border: 1px solid rgb(209, 209, 209);
+	}
+}
+.mainContainer__resultsContainer__message h2 {
+	font-size: 1.5em;
+	font-weight: 600;
+	margin: 0px;
+	padding: 5px;
+}
+.mainContainer__resultsContainer__message h3 {
+	font-size: 1.1em;
+	font-weight: 400;
+	margin: 10px;
+}
+.mainContainer__resultsContainer__message .respuesta {
+	text-align: start;
+	width: clamp(200px, calc(40vw + 10vh), 525px);
+	overflow-wrap: break-word;
+	font-size: 1em;
+	font-weight: 600;
+	margin: 0px;
+	padding-bottom: 15px;
+	padding: 15px;
+	padding-right: 0px;
+}
+.copyButton {
+	position: absolute;
+	bottom: 1%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	align-items: center;
+	padding: 1em;
+	font-size: 0.8em;
+	font-family: "Inter";
+	font-weight: 600;
+	background-color: var(--color-fondo-boton-oscuro);
+	color: white;
+}
+.invisible {
+	display: none;
+}
+
+@media screen and (max-width: 740px) {
+	.mainContainer {
+		flex-direction: column;
+		font-size: clamp(14px, 1vw, 20px);
+		padding: 5px;
+	}
+	.mainContainer__inputs__text {
+		width: 94vw;
+		height: clamp(5em, 50vh, 15em);
+	}
+	.mainContainer__inputs__buttonsContainer {
+		gap: 1.2em;
+	}
+	.mainContainer__inputs__buttonsContainer__button {
+		padding: 1.2em;
+		font-size: 1em;
+	}
+	.icon-lock {
+		height: 2.5em;
+		width: 2.5em;
+		padding: 1px;
+		margin-right: 4px;
+	}
+	.animationContainer {
+		position: relative;
+		width: clamp(200px, calc(40vw + 25vh), 400px);
+		height: clamp(200px, calc(40vw + 25vh), 400px);
+		overflow: hidden;
+	}
+	.mainContainer__inputs__warning {
+		font-size: clamp(1em, 1.2vh, 2em);
+	}
+	.mainContainer__resultsContainer {
+		width: 94vw;
+	}
+}

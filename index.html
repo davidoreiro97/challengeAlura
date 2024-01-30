@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/main.css" />
+		<title>Alura Challenge | Encriptador - Desencriptador</title>
+		<link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+		<meta name="description" content="Alura Challenge Curso One Oracle" />
+		<link
+			rel="preload"
+			as="font"
+			href="assets/fonts/Inter-VariableFont_slnt,wght.ttf"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://kit.fontawesome.com/6a5fdfe22b.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<div class="mainContainer">
+			<form id="textAreaForm" class="mainContainer__inputs">
+				<textarea
+					class="mainContainer__inputs__text"
+					name="textInput"
+					id="textInput"
+					placeholder="Ingrese el texto aquí"
+					required
+				></textarea>
+
+				<div class="mainContainer__footer">
+					<div class="mainContainer__inputs__warning">
+						<span
+							><i class="fa-solid fa-triangle-exclamation"></i> Solo se permiten
+							letras minúsculas y sin acentos.</span
+						>
+					</div>
+					<div class="mainContainer__inputs__buttonsContainer">
+						<button
+							type="submit"
+							class="mainContainer__inputs__buttonsContainer__button"
+							id="encryptButton"
+							name="encryptButton"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon-lock"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+								stroke="currentColor"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+								<path
+									d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"
+								/>
+								<path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+								<path d="M8 11v-4a4 4 0 1 1 8 0v4" />
+							</svg>
+							<span>ENCRIPTAR</span>
+						</button>
+						<button
+							type="submit"
+							class="mainContainer__inputs__buttonsContainer__button"
+							id="decryptButton"
+							name="decryptButton"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon-lock"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+								stroke="currentColor"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+								<path
+									d="M5 11m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z"
+								/>
+								<path d="M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+								<path d="M8 11v-5a4 4 0 0 1 8 0" />
+							</svg>
+							<span>DESENCRIPTAR</span>
+						</button>
+					</div>
+				</div>
+			</form>
+			<div class="mainContainer__resultsContainer">
+				<div
+					id="containerRespuesta"
+					class="mainContainer__resultsContainer__message"
+				>
+					<h2 id="respuesta" class="respuesta"></h2>
+					<h2 id="msg1">Ningun mensaje fue encontrado</h2>
+					<h3 id="msg2">
+						Ingrese el texto que desees encriptar o desencriptar.
+					</h3>
+					<button id="copyButton" class="copyButton invisible">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="icon icon-tabler icon-tabler-copy"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							stroke-width="2"
+							stroke="currentColor"
+							fill="none"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+							<path
+								d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z"
+							/>
+							<path
+								d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"
+							/>
+						</svg>
+						COPIAR
+					</button>
+				</div>
+				<div id="animation" class="animationContainer">
+					<img src="./assets/guy/cuerpo.png" />
+					<img class="diamante" src="./assets/guy/diamante.png" />
+					<img class="pelo" src="./assets/guy/pelo.png" />
+					<img class="particulas_1" src="./assets/guy/particulas_1.png" />
+					<img class="particulas_2" src="./assets/guy/particulas_2.png" />
+				</div>
+			</div>
+		</div>
+		<script src="js/index.js"></script>
+	</body>
+</html>
